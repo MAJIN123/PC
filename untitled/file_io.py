@@ -13,6 +13,7 @@ for i in range(10):
         lines=f.readlines()
         for line in lines:
             for st in line.split():
+                st=filter(str.isalpha,st)
                 sts.append(st)
 db={}
 for word in sts:
