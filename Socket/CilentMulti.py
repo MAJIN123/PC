@@ -7,7 +7,7 @@ import threading
 import re
 
 HOST = 'localhost'
-PORT = 21561
+PORT = 21572
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 threads = []

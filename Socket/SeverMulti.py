@@ -7,7 +7,7 @@ import threading
 import re
 
 HOST = ''
-PORT = 21561
+PORT = 21572
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
@@ -36,7 +36,10 @@ def Deal(sock,user):
                 sock.send('the user %s is not exist' %data)
         else:
             if chatwhit.has_key(sock):
-                chatwhit[sock].send("[%s] %s: %s" %ctime(),user,data)
+                chatwhit[sock].send('[%s]'%ctime())
+                chatwhit[sock].send('%s:'%user)
+                chatwhit[sock].send('%s'%data)
+                # chatwhit[sock].send('[%s] %s: %s' %ctime(),user,data)
             else:
                 sock.send('please input the user you want to chat with')
 
